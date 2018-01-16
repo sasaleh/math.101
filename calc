@@ -17,7 +17,7 @@ do
   if [[ $B == / && $C -eq 0 ]]
     then
       echo "Cannot divide by zero"
-      exit
+      goto :continue
   fi
 
   case $B in
