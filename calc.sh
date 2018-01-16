@@ -2,8 +2,7 @@
 
 while true
 do
-
-  :bbb
+  :continue
   clear
   printf " 6 7 8 9 0\n"
   printf " 1 2 3 4 5\n"
@@ -18,7 +17,7 @@ do
   if [[ $B == / && $C -eq 0 ]]
     then
       echo "Cannot divide by zero"
-      goto bbb
+      goto :continue
   fi
 
   case $B in
@@ -36,6 +35,6 @@ do
 
   echo -e "\nPress CTRL + C to quit, or any other key to continue"
   read whatever
-  goto bbb
+  goto :continue
 
 done
