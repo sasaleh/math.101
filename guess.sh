@@ -1,9 +1,10 @@
-
 #!/bin/bash
 
 clear
 x=`echo $RANDOM % 101 + 1 | bc`
 i=6
+
+# echo "X = $x"
 
 while [ $i -ge 0 ]
 do
@@ -23,17 +24,6 @@ do
       echo "$a is greater then X"
     else
       echo "$a is less then X"
-  fi
-
-  echo "Enter a second guess: "
-
-  read b
-
-  if [ $b -gt $x ]
-    then
-      echo "$b is greater then X"
-    else
-      echo "$b is less then X"
   fi
 
 i=$[$i-1]
