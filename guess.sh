@@ -1,57 +1,40 @@
+
 #!/bin/bash
 
-# 011518 added conditional check
-
+clear
 x=`echo $RANDOM % 101 + 1 | bc`
+i=6
 
-echo "Enter a number: "
+while [ $i -ge 0 ]
+do
+  echo "You have $i tries to guess a number"
+  echo "Enter a number: "
+  read a
+  echo
 
-echo "X = $x";
-read a
+  if [ $a -eq $x ]
+    then
+      echo "You win!! Goodbye."
+      exit
+  fi
 
-if [ $a -eq $x ]
-  then
-   echo "You won!!"
-   exit
-fi
+  if [ $a -gt $x ]
+    then
+      echo "$a is greater then X"
+    else
+      echo "$a is less then X"
+  fi
 
-if [ $a -gt $x ]
-  then
-    echo "$a is greater then X"
-  else
-    echo "$a is less then X"
-fi
+  echo "Enter a second guess: "
 
-echo "Enter a second guess: "
+  read b
 
-read b
+  if [ $b -gt $x ]
+    then
+      echo "$b is greater then X"
+    else
+      echo "$b is less then X"
+  fi
 
-if [ $a -eq $x ]
-  then
-   echo "You won!!"
-   exit
-fi
-
-if [ $b -gt $x ]
-  then
-    echo "$b is greater then X"
-  else
-    echo "$b is less then X"
-fi
-
-echo "Enter a third guess: "
-
-read c
-
-if [ $c -eq $x ]
-  then
-   echo "You won!!"
-   exit
-fi
-
-if [ $c -gt $x ]
-  then
-    echo "$c is greater then X"
-  else
-    echo "$c is less then X"
-fi
+i=$[$i-1]
+done
