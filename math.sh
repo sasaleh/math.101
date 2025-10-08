@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# DC - a "desk calculator like BC, though a bit more primitive"
 
 printf "Enter yur first number - ";
 read A;
